@@ -1,0 +1,120 @@
+{
+  "name": "eel",
+  "displayName": "Embedded Erlang - EEl",
+  "description": "Template renderer for Erlang",
+  "version": "0.0.1",
+  "author": {
+    "name": "William Fank Thomé",
+    "url": "https://github.com/williamthome/"
+  },
+  "contributors": [
+      {
+          "name": "William Fank Thomé"
+      }
+  ],
+  "funding": [
+      "https://github.com/sponsors/williamthome",
+      "https://www.buymeacoffee.com/williamthome"
+  ],
+  "publisher": "williamthome",
+  "license": "Apache-2.0",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+      "color": "#A90432",
+      "theme": "dark"
+  },
+  "homepage": "https://github.com/williamthome/vscode_eel",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/williamthome/vscode_eel"
+  },
+  "bugs": {
+      "url": "https://github.com/williamthome/vscode_eel/issues"
+  },
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "keywords": [
+    "eel",
+    "html-eel",
+    "language-server-protocol",
+    "lsp",
+    "erlang",
+    "highlight"
+  ],
+  "categories": [
+      "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:eel",
+    "onLanguage:html-eel"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configurationDefaults": {
+			"[html-eel]": {
+				"editor.trimAutoWhitespace": false,
+				"files.trimTrailingWhitespace": true,
+				"files.insertFinalNewline": true,
+				"files.trimFinalNewlines": true
+			}
+		},
+    "languages": [
+			{
+				"id": "eel",
+				"aliases": [
+					"Embedded Erlang",
+					"eel"
+				],
+				"extensions": [
+					".eel"
+				],
+				"configuration": "./eel-language-configuration.json"
+			},
+			{
+				"id": "html-eel",
+				"aliases": [
+					"HTML (Embedded Erlang)",
+					"HTML (EEl)"
+				],
+				"extensions": [
+					".html.eel"
+				],
+				"configuration": "./eel-language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "eel",
+				"scopeName": "text.erlang",
+				"path": "./syntaxes/eel.tmLanguage.json"
+			},
+			{
+				"language": "html-eel",
+				"scopeName": "text.html.erlang",
+				"path": "./syntaxes/html-eel.tmLanguage.json"
+			}
+		]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.71.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
