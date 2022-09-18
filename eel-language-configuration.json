@@ -1,6 +1,6 @@
 {
     "comments": {
-      "blockComment": ["<%#", "#%>"]
+      "blockComment": ["<%%", "%%>"]
     },
     "brackets": [
       ["<", ">"],
@@ -32,11 +32,11 @@
     ],
     "onEnterRules": [
       {
-        "beforeText": "<%#\\s*$",
+        "beforeText": "<%%\\s*$",
         "action": {
           "indent": "indentOutdent"
         },
-        "afterText": "#%>\\s*$"
+        "afterText": "%%>\\s*$"
       }
     ]
 }

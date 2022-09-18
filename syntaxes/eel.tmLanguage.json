@@ -16,13 +16,13 @@
     "name": "Embedded Erlang",
     "patterns": [
         {
-            "begin": "<%#",
+            "begin": "<%%",
             "captures": {
                 "0": {
                     "name": "punctuation.definition.comment.eel"
                 }
             },
-            "end": "#%>",
+            "end": "%%>",
             "name": "comment.block.eel"
         },
         {
