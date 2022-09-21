@@ -2,7 +2,7 @@
   "name": "eel",
   "displayName": "Embedded Erlang - EEl",
   "description": "Embedded Erlang (EEl) support for Visual Studio Code.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "William Fank Thomé",
     "url": "https://github.com/williamthome/"
